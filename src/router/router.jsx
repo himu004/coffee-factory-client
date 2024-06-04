@@ -4,6 +4,8 @@ import {
 import Root from "../pages/Root/Root";
 import Home from "../pages/Home/Home";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import AddCoffee from "../components/AddCoffee";
+import UpdateCoffee from "../components/UpdateCoffee";
 
   const router = createBrowserRouter([
     {
@@ -14,6 +16,14 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage";
         {
             path: "/",
             element: <Home/>
+        },
+        {
+            path: "/addCoffee",
+            element: <AddCoffee/>
+        },
+        {
+            path: "/updateCoffee",
+            element: <UpdateCoffee/>
         }
       ]
     },

@@ -1,8 +1,20 @@
-# React + Vite
+# Coffee Factory Client 
+## Table of Contents
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- This Project is a simple client for the Coffee Factory API. 
+- It is a simple web application that allows users to view the list of coffee products.
+- Add new products, and delete existing products.
 
-Currently, two official plugins are available:
+# Technology Used 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## For Frontend
+
+- React
+- Tailwind CSS
+- Daisy UI
+
+## For Backend
+
+- NodeJs
+- ExpressJs
+- MongoDB
