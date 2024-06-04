@@ -5,7 +5,7 @@
 - It is a simple web application that allows users to view the list of coffee products.
 - Add new products, and delete existing products.
 
-# Technology Used 
+## Technology Used 
 
 ## For Frontend
 
@@ -18,3 +18,7 @@
 - NodeJs
 - ExpressJs
 - MongoDB
+
+## For Authentication
+
+- Firebase
