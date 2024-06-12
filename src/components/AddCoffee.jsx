@@ -28,7 +28,7 @@ const AddCoffee = () => {
 
     console.log(newCoffee);
 
-    // send data to the server
+    // send data to the server, device changed thats why port 3000
     fetch("http://localhost:3000/coffee", {
         method: "POST",
         headers: {
