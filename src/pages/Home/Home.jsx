@@ -1,6 +1,7 @@
 import Banner from "../../components/Banner/Banner";
 import BannerCard from "../../components/Banner/BannerCard";
 import CoffeeSection from "../../components/CoffeeSection";
+import FollowUs from "../../components/FollowUs/FollowUs";
 
 
 const Home = () => {
@@ -9,6 +10,7 @@ const Home = () => {
             <Banner/> 
             <BannerCard/>
             <CoffeeSection/>
+            <FollowUs/>
         </div>
     );
 };
