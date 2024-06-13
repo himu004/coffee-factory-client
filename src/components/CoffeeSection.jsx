@@ -2,47 +2,12 @@
 import bgImage1 from "../assets/images/more/4.png";
 import bgImage from "../assets/images/more/5.png";
 import btnIcon from "../assets/images/icons/4.png";
-import { Link } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
+import CoffeeCard from "./CoffeeCard";
 
 const CoffeeSection = () => {
-  const products = [
-    {
-      name: "Americano Coffee",
-      chef: "Mr. Matin Paul",
-      price: "890 Taka",
-      image: "path_to_americano_image",
-    },
-    {
-      name: "Black Coffee",
-      chef: "Mr. Nibra Sweden",
-      price: "890 Taka",
-      image: "path_to_black_image",
-    },
-    {
-      name: "Espresso Coffee",
-      chef: "Mrs. Morisha",
-      price: "890 Taka",
-      image: "path_to_espresso_image",
-    },
-    {
-      name: "Cappuccino Coffee",
-      chef: "Mr. Moruti",
-      price: "890 Taka",
-      image: "path_to_cappuccino_image",
-    },
-    {
-      name: "Macchiato",
-      chef: "Mr. Moruti",
-      price: "890 Taka",
-      image: "path_to_macchiato_image",
-    },
-    {
-      name: "Decaf Coffee",
-      chef: "Mr. Moruti",
-      price: "890 Taka",
-      image: "path_to_decaf_image",
-    },
-  ];
+  
+  const coffees = useLoaderData();
 
   return (
     <div className="py-10 px-5 relative">
@@ -79,28 +44,9 @@ const CoffeeSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Here Will Go Added Coffee showcase */}
-          {products.map((product, index) => (
-            <div
-              key={index}
-              className="bg-white p-6 rounded-lg shadow-lg relative"
-            >
-              <img
-                src={product.image}
-                alt={product.name}
-                className="w-full h-40 object-cover rounded-md mb-4"
-              />
-              <h2 className="text-xl font-bold">{product.name}</h2>
-              <p className="text-gray-700">Chef: {product.chef}</p>
-              <p className="text-gray-900 font-bold">{product.price}</p>
-              <div className="absolute top-4 right-4 flex space-x-2">
-                <button className="bg-gray-200 p-2 rounded-full">👁</button>
-                <button className="bg-gray-200 p-2 rounded-full">✏️</button>
-                <button className="bg-red-500 text-white p-2 rounded-full">
-                  🗑
-                </button>
-              </div>
-            </div>
-          ))}
+          {
+            coffees.map(coffee => <CoffeeCard key={coffee._id} coffee={coffee}></CoffeeCard>)
+          }
         </div>
       </div>
     </div>
