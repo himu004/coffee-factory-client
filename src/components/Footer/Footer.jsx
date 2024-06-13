@@ -1,7 +1,9 @@
+import bg from '../../assets/images//more/24.jpg';
+
 const Footer = () => {
   return (
-    <div>
-      <footer className="footer p-10 bg-base-200 text-base-content mt-10">
+    <div className='bg-base-200'>
+      <footer className="footer p-10 w-4/5 mx-auto text-base-content mt-10">
         <aside>
           <svg
             width="50"
@@ -41,6 +43,9 @@ const Footer = () => {
           <a className="link link-hover">Cookie policy</a>
         </nav>
       </footer>
+      <div style={{ backgroundImage: `url(${bg})` }} className="h-[50px] bg-cover bg-center flex justify-center items-center">
+        <p className='text-white'>Copyright Espresso Emporium ! All Rights Reserved</p>
+      </div>
     </div>
   );
 };
