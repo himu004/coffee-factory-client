@@ -54,7 +54,7 @@ const AddCoffee = () => {
     <Link className="" to='/'>
       <button className="m-5 border-2 py-4 px-2 rounded-lg transition hover:text-[#331A15] hover:bg-[#D2B48C] hover:border-[#331A15]">Back To Home</button>
     </Link>
-      
+
       <div className="w-4/5 mx-auto bg-[#F4F3F0] md:p-20 p-5 rounded-lg my-5">
         <div className="text-center space-y-3">
           <h2 className="text-3xl font-extrabold">Add a Coffee</h2>
