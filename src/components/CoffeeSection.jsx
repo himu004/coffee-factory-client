@@ -10,7 +10,7 @@ const CoffeeSection = () => {
   const coffees = useLoaderData();
 
   return (
-    <div className="py-10 px-5 relative">
+    <div className="py-10 relative">
       {/* Background images */}
       <div className="hidden md:block absolute top-0 left-0 w-1/4 h-full bg-no-repeat bg-contain">
         <img className="mt-20" src={bgImage1} alt="" />
@@ -33,7 +33,7 @@ const CoffeeSection = () => {
           className="relative z-1 mt-4 px-8 py-2 bg-[#E3B577] border-2 rounded-md border-[#1B1A1A] text-white transition hover:bg-transparent hover:text-[#331A15] flex justify-center items-center mx-auto">
             Add Coffee
             <img
-              className="absolute right-0 mr-2 z-2 w-[20px] h-[20px] transition-all hover:w-[80px] hover:h-[80px] hover:-translate-x-18"
+              className="absolute right-0 mr-2 z-2 w-[20px] h-[20px] transition-all hover:rotate-45"
               src={btnIcon}
               alt=""
             />
