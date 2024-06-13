@@ -35,7 +35,7 @@ const Footer = () => {
         </nav>
       </footer>
       <div style={{ backgroundImage: `url(${bg})` }} className="h-[50px] bg-cover bg-center flex justify-center items-center">
-        <p className='text-white'>Copyright Espresso Emporium ! All Rights Reserved</p>
+        <p className='text-white'>Copyright Himu Chowdhury || All Rights Reserved</p>
       </div>
     </div>
   );
