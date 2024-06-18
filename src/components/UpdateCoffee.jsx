@@ -1,4 +1,5 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const UpdateCoffee = () => {
 
@@ -7,11 +8,57 @@ const UpdateCoffee = () => {
     const { _id, name, quantity, supplier, taste, category, details, photo } = coffee;
 
     const handleUpdateCoffee = () => {
+        event.preventDefault();
 
+        const form = event.target;
+    
+        const name = form.name.value;
+        const quantity = form.quantity.value;
+        const supplier = form.supplier.value;
+        const taste = form.taste.value;
+        const category = form.category.value;
+        const details = form.details.value;
+        const photo = form.photo.value;
+    
+        const updatedCoffee = {
+          name,
+          quantity,
+          supplier,
+          taste,
+          category,
+          details,
+          photo,
+        };
+    
+        console.log(updatedCoffee);
+    
+        // send data to the server, device changed thats why port 3000
+        fetch(`http://localhost:3000/coffee/${_id}`, {
+          method: "PUT",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(updatedCoffee),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if(data.modifiedCount > 1) {
+              Swal.fire({
+                title: "Success!",
+                text: "Coffee Updated Successfully",
+                icon: "success",
+                confirmButtonText: "Cool",
+              });
+            }
+          });
     }
 
     return (
         <div>
+        <Link className="" to='/'>
+      <button className="m-5 border-2 py-4 px-2 rounded-lg transition hover:text-[#331A15] hover:bg-[#D2B48C] hover:border-[#331A15]">Back To Home</button>
+    </Link>
             <div className="w-4/5 mx-auto bg-[#F4F3F0] md:p-20 p-5 rounded-lg my-5">
         <div className="text-center space-y-3">
           <h2 className="text-3xl font-extrabold mb-8">Update/Edit Your Coffee</h2>
@@ -27,8 +74,8 @@ const UpdateCoffee = () => {
                 <input
                   type="text"
                   name="name"
-                  placeholder={name}
-                  className="input input-bordered w-full"
+                  defaultValue={name}
+                  className="input input-bordered w-full text-red-400"
                 />
               </label>
             </div>
@@ -40,8 +87,8 @@ const UpdateCoffee = () => {
                 <input
                   type="text"
                   name="quantity"
-                  placeholder={quantity}
-                  className="input input-bordered w-full"
+                  defaultValue={quantity}
+                  className="input input-bordered w-full text-red-400"
                 />
               </label>
             </div>
@@ -56,8 +103,8 @@ const UpdateCoffee = () => {
                 <input
                   type="text"
                   name="supplier"
-                  placeholder={supplier}
-                  className="input input-bordered w-full"
+                  defaultValue={supplier}
+                  className="input input-bordered w-full text-red-400"
                 />
               </label>
             </div>
@@ -69,8 +116,8 @@ const UpdateCoffee = () => {
                 <input
                   type="text"
                   name="taste"
-                  placeholder={taste}
-                  className="input input-bordered w-full"
+                  defaultValue={taste}
+                  className="input input-bordered w-full text-red-400"
                 />
               </label>
             </div>
@@ -85,8 +132,8 @@ const UpdateCoffee = () => {
                 <input
                   type="text"
                   name="category"
-                  placeholder={category}
-                  className="input input-bordered w-full"
+                  defaultValue={category}
+                  className="input input-bordered w-full text-red-400"
                 />
               </label>
             </div>
@@ -98,8 +145,8 @@ const UpdateCoffee = () => {
                 <input
                   type="text"
                   name="details"
-                  placeholder={details}
-                  className="input input-bordered w-full"
+                  defaultValue={details}
+                  className="input input-bordered w-full text-red-400"
                 />
               </label>
             </div>
@@ -114,8 +161,8 @@ const UpdateCoffee = () => {
                 <input
                   type="text"
                   name="photo"
-                  placeholder="Photo URL"
-                  className="input input-bordered w-full"
+                  defaultValue="Photo URL"
+                  className="input input-bordered w-full text-red-400"
                 />
               </label>
             </div>
